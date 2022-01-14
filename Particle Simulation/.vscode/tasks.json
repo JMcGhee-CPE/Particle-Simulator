@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "NVCC: Build for cpu",
+			"command": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin\\nvcc.exe",
+			"args": [
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-I${fileDirname}\\freeglut\\include",
+				"-L${fileDirname}\\freeglut\\bin\\x64",
+				"-L${fileDirname}\\freeglut\\lib\\x64",
+				"-lfreeglut"
+			],
+			"options": {
+				"cwd": "C:/cygwin64/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:/cygwin64/bin/g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "NVCC: Build for gpu",
+			"command": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin\\nvcc.exe",
+			"args": [
+				"-g",
+				"-G",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}_gpu.exe",
+				"-I${fileDirname}\\freeglut\\include",
+				"-L${fileDirname}\\freeglut\\bin\\x64",
+				"-L${fileDirname}\\freeglut\\lib\\x64",
+				"-lfreeglut"
+			],
+			"options": {
+				"cwd": "C:/cygwin64/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:/cygwin64/bin/g++.exe"
+		}
+	]
+}
