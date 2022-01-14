@@ -54,9 +54,9 @@ void initalize_atoms(Atom** d_atoms)
     new_atom->coords = startingPosition;
     new_atom->vel = startingVelocity;
 
-    new_atom->color[0] = 0.74;//(curand(&state) % 100) / (float)100.0;
-    new_atom->color[1] = 0;//(curand(&state) % 100) / (float)100.0;
-    new_atom->color[2] = 0;//(curand(&state) % 100) / (float)100.0;
+    new_atom->color[0] = (curand(&state) % 100) / (float)100.0;
+    new_atom->color[1] = (curand(&state) % 100) / (float)100.0;
+    new_atom->color[2] = (curand(&state) % 100) / (float)100.0;
 
     d_atoms[linearIdx] = new_atom;
 
